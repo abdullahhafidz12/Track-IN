@@ -937,41 +937,29 @@
 
 
 
-<!-- =========================================================
+<!-- ==============================
      MODAL TAMBAH CARD
-========================================================= -->
+================================ -->
 
-<!-- =========================================================
-     TAMBAH CARD MODAL
-========================================================= -->
+<div id="cardModal" class="card-modal-overlay">
 
-<div class="modal-overlay hidden" id="cardModal">
+    <div class="card-modal">
 
-    <div class="add-card-modal">
+        <!-- HEADER -->
+        <div class="card-modal-header">
 
-        <!-- HEADER MODAL -->
-        <div class="add-card-header">
+            <div class="card-modal-title">
 
-            <div class="add-card-heading">
+                <span class="card-plus-icon">+</span>
 
-                <div class="add-card-title-icon">
-                    +
-                </div>
-
-                <div>
-
-                    <h2>
-                        Tambah Card
-                    </h2>
-
-                </div>
+                <span>Tambah Card</span>
 
             </div>
 
             <button
-                type="button"
-                class="modal-close-button"
+                class="card-modal-close"
                 id="closeCardModal"
+                type="button"
             >
                 ×
             </button>
@@ -979,49 +967,41 @@
         </div>
 
 
-        <!-- LIST CARD -->
-        <div class="card-options">
+        <!-- CONTENT -->
+        <div class="card-modal-body">
 
 
-            <!-- =========================================
-                 TAGIHAN
-            ========================================== -->
-
+            <!-- TAGIHAN -->
             <div
-                class="card-option selected"
-                data-widget-card="tagihan"
+                class="dashboard-card-option active"
+                data-card="tagihan"
             >
 
-                <div class="option-check">
-
+                <div class="card-option-check">
                     <input
                         type="checkbox"
-                        id="toggleTagihan"
-                        data-widget-toggle="tagihan"
+                        id="cardTagihan"
                         checked
                     >
 
-                    <span class="custom-check">
-                        ✓
-                    </span>
-
+                    <span class="fake-checkbox">✓</span>
                 </div>
 
 
-                <div class="option-icon icon-yellow">
+                <div class="card-option-icon tagihan-icon">
                     ♧
                 </div>
 
 
-                <div class="option-information">
+                <div class="card-option-text">
 
-                    <h3>
+                    <div class="card-option-name">
                         Tagihan Terdekat
-                    </h3>
+                    </div>
 
-                    <p>
+                    <div class="card-option-desc">
                         Pantau pembayaran kost dan iuran sebelum jatuh tempo
-                    </p>
+                    </div>
 
                 </div>
 
@@ -1029,45 +1009,39 @@
 
 
 
-            <!-- =========================================
-                 INVENTARIS
-            ========================================== -->
-
+            <!-- INVENTARIS -->
             <div
-                class="card-option selected"
-                data-widget-card="inventaris"
+                class="dashboard-card-option active"
+                data-card="inventaris"
             >
 
-                <div class="option-check">
+                <div class="card-option-check">
 
                     <input
                         type="checkbox"
-                        id="toggleInventaris"
-                        data-widget-toggle="inventaris"
+                        id="cardInventaris"
                         checked
                     >
 
-                    <span class="custom-check">
-                        ✓
-                    </span>
+                    <span class="fake-checkbox">✓</span>
 
                 </div>
 
 
-                <div class="option-icon icon-green">
+                <div class="card-option-icon inventaris-icon">
                     ◈
                 </div>
 
 
-                <div class="option-information">
+                <div class="card-option-text">
 
-                    <h3>
+                    <div class="card-option-name">
                         Inventaris Terbaru
-                    </h3>
+                    </div>
 
-                    <p>
+                    <div class="card-option-desc">
                         Daftar item bersama pribadi yang baru ditambahkan
-                    </p>
+                    </div>
 
                 </div>
 
@@ -1075,45 +1049,39 @@
 
 
 
-            <!-- =========================================
-                 AKTIVITAS
-            ========================================== -->
-
+            <!-- AKTIVITAS -->
             <div
-                class="card-option selected"
-                data-widget-card="aktivitas"
+                class="dashboard-card-option active"
+                data-card="aktivitas"
             >
 
-                <div class="option-check">
+                <div class="card-option-check">
 
                     <input
                         type="checkbox"
-                        id="toggleAktivitas"
-                        data-widget-toggle="aktivitas"
+                        id="cardAktivitas"
                         checked
                     >
 
-                    <span class="custom-check">
-                        ✓
-                    </span>
+                    <span class="fake-checkbox">✓</span>
 
                 </div>
 
 
-                <div class="option-icon icon-blue">
+                <div class="card-option-icon aktivitas-icon">
                     ♧
                 </div>
 
 
-                <div class="option-information">
+                <div class="card-option-text">
 
-                    <h3>
+                    <div class="card-option-name">
                         Aktivitas Terbaru
-                    </h3>
+                    </div>
 
-                    <p>
+                    <div class="card-option-desc">
                         Riwayat log perubahan dan kontribusi para penghuni kost
-                    </p>
+                    </div>
 
                 </div>
 
@@ -1121,44 +1089,38 @@
 
 
 
-            <!-- =========================================
-                 PENGELUARAN
-            ========================================== -->
-
+            <!-- PENGELUARAN -->
             <div
-                class="card-option"
-                data-widget-card="pengeluaran"
+                class="dashboard-card-option"
+                data-card="pengeluaran"
             >
 
-                <div class="option-check">
+                <div class="card-option-check">
 
                     <input
                         type="checkbox"
-                        id="togglePengeluaran"
-                        data-widget-toggle="pengeluaran"
+                        id="cardPengeluaran"
                     >
 
-                    <span class="custom-check">
-                        ✓
-                    </span>
+                    <span class="fake-checkbox">✓</span>
 
                 </div>
 
 
-                <div class="option-icon icon-grey">
+                <div class="card-option-icon pengeluaran-icon">
                     ▣
                 </div>
 
 
-                <div class="option-information">
+                <div class="card-option-text">
 
-                    <h3>
+                    <div class="card-option-name">
                         Pengeluaran Bulan Ini
-                    </h3>
+                    </div>
 
-                    <p>
+                    <div class="card-option-desc">
                         Total akumulasi anggaran belanja bulan berjalan
-                    </p>
+                    </div>
 
                 </div>
 
@@ -1166,44 +1128,38 @@
 
 
 
-            <!-- =========================================
-                 KATEGORI
-            ========================================== -->
-
+            <!-- KATEGORI -->
             <div
-                class="card-option"
-                data-widget-card="kategori"
+                class="dashboard-card-option"
+                data-card="kategori"
             >
 
-                <div class="option-check">
+                <div class="card-option-check">
 
                     <input
                         type="checkbox"
-                        id="toggleKategori"
-                        data-widget-toggle="kategori"
+                        id="cardKategori"
                     >
 
-                    <span class="custom-check">
-                        ✓
-                    </span>
+                    <span class="fake-checkbox">✓</span>
 
                 </div>
 
 
-                <div class="option-icon icon-grey">
+                <div class="card-option-icon kategori-icon">
                     ◷
                 </div>
 
 
-                <div class="option-information">
+                <div class="card-option-text">
 
-                    <h3>
+                    <div class="card-option-name">
                         Pengeluaran per Kategori
-                    </h3>
+                    </div>
 
-                    <p>
+                    <div class="card-option-desc">
                         Visualisasi diagram pembagian kategori pembiayaan kost
-                    </p>
+                    </div>
 
                 </div>
 
@@ -1213,22 +1169,20 @@
         </div>
 
 
-
         <!-- FOOTER -->
-        <div class="add-card-footer">
+        <div class="card-modal-footer">
 
             <button
                 type="button"
-                class="modal-cancel"
+                class="card-btn-cancel"
                 id="cancelCardModal"
             >
                 Batal
             </button>
 
-
             <button
                 type="button"
-                class="modal-save"
+                class="card-btn-save"
                 id="saveCardModal"
             >
                 Simpan Card
@@ -1238,161 +1192,6 @@
 
     </div>
 
-</div>
-
-            <button
-                class="close-modal"
-                id="closeCardModal"
-            >
-                ×
-            </button>
-
-        </div>
-
-
-        <div class="widget-selection">
-
-
-            <label class="selection-item">
-
-                <div>
-                    <strong>
-                        Tagihan Terdekat
-                    </strong>
-
-                    <small>
-                        Menampilkan tagihan yang akan jatuh tempo.
-                    </small>
-                </div>
-
-                <input
-                    type="checkbox"
-                    data-widget-toggle="tagihan"
-                    checked
-                >
-
-            </label>
-
-
-            <label class="selection-item">
-
-                <div>
-                    <strong>
-                        Inventaris Terbaru
-                    </strong>
-
-                    <small>
-                        Menampilkan barang terbaru.
-                    </small>
-                </div>
-
-                <input
-                    type="checkbox"
-                    data-widget-toggle="inventaris"
-                    checked
-                >
-
-            </label>
-
-
-            <label class="selection-item">
-
-                <div>
-                    <strong>
-                        Aktivitas Terbaru
-                    </strong>
-
-                    <small>
-                        Menampilkan aktivitas pengguna.
-                    </small>
-                </div>
-
-                <input
-                    type="checkbox"
-                    data-widget-toggle="aktivitas"
-                    checked
-                >
-
-            </label>
-
-
-            <label class="selection-item">
-
-                <div>
-                    <strong>
-                        Pengeluaran
-                    </strong>
-
-                    <small>
-                        Menampilkan total pengeluaran bulan ini.
-                    </small>
-                </div>
-
-                <input
-                    type="checkbox"
-                    data-widget-toggle="pengeluaran"
-                    checked
-                >
-
-            </label>
-
-
-            <label class="selection-item">
-
-                <div>
-                    <strong>
-                        Per Kategori
-                    </strong>
-
-                    <small>
-                        Menampilkan pengeluaran berdasarkan kategori.
-                    </small>
-                </div>
-
-                <input
-                    type="checkbox"
-                    data-widget-toggle="kategori"
-                    checked
-                >
-
-            </label>
-
-        </div>
-
-
-        <div class="modal-footer">
-
-            <button
-                class="cancel-button"
-                id="cancelCardModal"
-            >
-                Batal
-            </button>
-
-            <button
-                class="save-button"
-                id="saveCardModal"
-            >
-                Simpan Card
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =========================================================
-     TOAST
-========================================================= -->
-
-<div
-    class="toast"
-    id="toast"
->
-    Berhasil
 </div>
 
 
