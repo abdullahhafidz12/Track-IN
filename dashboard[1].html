@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track IN - Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div>
+        <div class="brand">
+          <div class="brand-icon">T</div>
+          <div>
+            <h1>Track IN</h1>
+            <p>Kost Management System</p>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a class="nav-link active" href="#dashboard"><span>▣</span> Dasbor</a>
+          <a class="nav-link" href="#keuangan"><span>◈</span> Keuangan</a>
+          <a class="nav-link" href="#inventaris"><span>□</span> Inventaris</a>
+          <a class="nav-link" href="#catatan"><span>▤</span> Catatan</a>
+          <a class="nav-link" href="#akun"><span>○</span> Akun</a>
+        </nav>
+      </div>
+
+      <div class="profile">
+        <div class="avatar">Y</div>
+        <div>
+          <strong>Yusuf</strong>
+          <small>yusuf@trackin.id</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main" id="dashboard">
+      <header class="header">
+        <div>
+          <h2>Dasbor Utama</h2>
+          <p>Ringkasan aktivitas keuangan, inventaris, dan tagihan kost.</p>
+        </div>
+        <div class="header-actions">
+          <div class="cash"><span>TUNAI</span><strong>Rp 1.000.000</strong></div>
+          <button class="btn btn-light" id="catatanBtn">＋ Catatan</button>
+          <button class="btn btn-primary" id="addCardBtn">＋ Tambah Card</button>
+        </div>
+      </header>
+
+      <section class="summary">
+        <div class="summary-top">
+          <div>
+            <span class="eyebrow">STATUS RINGKASAN SALDO</span>
+            <h3>Rp 1.000.000</h3>
+          </div>
+          <div class="summary-stats">
+            <div><span>ARUS KAS</span><strong>Rp 850.000</strong></div>
+            <div><span>PENGELUARAN</span><strong>Rp 850.000</strong></div>
+          </div>
+        </div>
+        <div class="summary-bottom">
+          <span>Saldo: <b>Rp 1.000.000</b></span>
+          <span>Anggaran Kos: <b>Rp 500.000</b></span>
+          <span>Proyek Lainnya: <b>Rp 0</b></span>
+        </div>
+      </section>
+
+      <div class="dashboard-grid">
+        <div class="left-column">
+          <section class="card widget" data-widget="trenSaldo">
+            <div class="card-head">
+              <div>
+                <h3>↗ Tren Saldo & Kebutuhan</h3>
+                <p>Grafik pergerakan saldo harian</p>
+              </div>
+              <select id="periodSelect">
+                <option>Agustus 2026</option>
+                <option>Mei 2025</option>
+              </select>
+            </div>
+            <div class="chart">
+              <div class="chart-y"><span>Rp 100rb</span><span>Rp 50rb</span><span>Rp 0</span></div>
+              <svg viewBox="0 0 500 100" preserveAspectRatio="none" aria-label="Grafik saldo">
+                <path d="M0 50 Q125 40 250 50 T500 50" fill="none" stroke="currentColor" stroke-width="3"/>
+                <circle cx="0" cy="50" r="4"/><circle cx="125" cy="45" r="4"/><circle cx="250" cy="50" r="4"/><circle cx="375" cy="50" r="4"/><circle cx="500" cy="50" r="4"/>
+              </svg>
+              <div class="chart-x"><span>1 Mei</span><span>8 Mei</span><span>15 Mei</span><span>22 Mei</span><span>31 Mei</span></div>
+            </div>
+          </section>
+
+          <section class="card widget" data-widget="strukturPengeluaran">
+            <div class="card-head"><h3>◔ Struktur Pengeluaran</h3></div>
+            <div class="empty">
+              <div class="empty-icon">▤</div>
+              <p>Tidak ada data pada rentang waktu yang dipilih.</p>
+              <button class="btn btn-primary btn-small" data-toast="Form tambah data akan dibuka.">＋ Tambah Data Pertama Anda</button>
+            </div>
+          </section>
+
+          <section class="card widget" data-widget="inventarisTerbaru" id="inventaris">
+            <div class="card-head">
+              <div>
+                <h3>□ Inventaris Terbaru</h3>
+                <p>Barang kost yang baru ditambahkan</p>
+              </div>
+              <a href="#inventaris">Lihat Inventaris →</a>
+            </div>
+            <div class="list" id="inventoryList"></div>
+          </section>
+        </div>
+
+        <div class="right-column">
+          <section class="card widget" data-widget="tagihanTerdekat">
+            <div class="bill-head"><span class="badge">TAGIHAN TERDEKAT</span><span class="due">◷ 2 hari lagi</span></div>
+            <h3>Kost September</h3>
+            <div class="amount">Rp 500.000</div>
+            <p class="muted">Jatuh tempo: 5 September 2026</p>
+            <button class="btn btn-dark full" data-toast="Detail tagihan dibuka.">Lihat Detail →</button>
+          </section>
+
+          <section class="card widget" data-widget="pengeluaranBulanIni">
+            <div class="expense-head">
+              <div><span class="eyebrow dark">PENGELUARAN BULAN INI</span><div class="big-amount">Rp 850.000</div></div>
+              <span class="plan">Sesuai Rencana</span>
+            </div>
+            <p class="muted">Periode: Agustus 2026</p>
+            <div class="category">
+              <b>Per Kategori</b>
+              <div><span>Kost</span><strong>Rp 500.000</strong></div>
+              <div><span>WiFi</span><strong>Rp 150.000</strong></div>
+              <div><span>Listrik</span><strong>Rp 100.000</strong></div>
+            </div>
+          </section>
+
+          <section class="card widget" data-widget="aktivitasTerbaru" id="aktivitas">
+            <div class="card-head"><h3>Aktivitas Terbaru</h3><a href="#aktivitas">Lihat Semua →</a></div>
+            <div class="activity-list">
+              <div class="activity"><div class="avatar blue">Y</div><p><strong>Yusuf</strong> menambahkan 'Galon' <b>Rp20.000</b><small>Hari ini</small></p></div>
+              <div class="activity"><div class="avatar purple">B</div><p><strong>Bagus</strong> menambahkan 'Kipas Angin' <b>Rp300.000</b><small>Kemarin</small></p></div>
+              <div class="activity"><div class="avatar amber">A</div><p><strong>Andi</strong> membayar 'WiFi' <b>Rp100.000</b><small>2 hari lalu</small></p></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal hidden" id="cardModal">
+    <div class="modal-box">
+      <div class="modal-head"><h3>Tambah Card / Atur Widget</h3><button id="closeModal">×</button></div>
+      <div class="widget-options" id="widgetOptions">
+        <label><div><b>Tagihan Terdekat</b><small>Pantau pembayaran kost dan iuran sebelum jatuh tempo</small></div><input type="checkbox" data-key="tagihanTerdekat" checked></label>
+        <label><div><b>Tren Saldo & Kebutuhan</b><small>Visualisasi tren pengeluaran dan riwayat saldo</small></div><input type="checkbox" data-key="trenSaldo" checked></label>
+        <label><div><b>Inventaris Terbaru</b><small>Daftar item yang baru ditambahkan</small></div><input type="checkbox" data-key="inventarisTerbaru" checked></label>
+        <label><div><b>Aktivitas Terbaru</b><small>Riwayat perubahan dan kontribusi penghuni</small></div><input type="checkbox" data-key="aktivitasTerbaru" checked></label>
+        <label><div><b>Pengeluaran Bulan Ini</b><small>Total akumulasi anggaran belanja bulan berjalan</small></div><input type="checkbox" data-key="pengeluaranBulanIni" checked></label>
+        <label><div><b>Struktur Pengeluaran</b><small>Visualisasi pembagian kategori pembiayaan kost</small></div><input type="checkbox" data-key="strukturPengeluaran" checked></label>
+      </div>
+      <div class="modal-actions"><button class="btn btn-light" id="cancelModal">Batal</button><button class="btn btn-primary" id="saveModal">Simpan Card</button></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="dashboard.js"></script>
+</body>
+</html>
